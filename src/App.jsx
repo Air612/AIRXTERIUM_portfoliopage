@@ -2,9 +2,15 @@ import { useState } from "react";
 import {
   ArrowDown,
   ArrowUpRight,
+  Buildings,
+  CaretDown,
   Check,
   Copy,
+  Database,
   EnvelopeSimple,
+  Robot,
+  ShieldCheck,
+  UsersThree,
   XLogo,
   YoutubeLogo,
 } from "@phosphor-icons/react";
@@ -48,6 +54,7 @@ const pricingGroups = [
 
 export function App() {
   const [copied, setCopied] = useState(false);
+  const [productOpen, setProductOpen] = useState(false);
 
   async function copyEmail() {
     await navigator.clipboard.writeText("air0916.jp@gmail.com");
@@ -63,6 +70,7 @@ export function App() {
         </a>
         <nav aria-label="Main navigation">
           <a href="#works">Works</a>
+          <a href="#products">Products</a>
           <a href="#socials">Socials</a>
           <a href="#stack">Skills</a>
           <a href="#contact">Contact</a>
@@ -116,10 +124,108 @@ export function App() {
           </div>
         </section>
 
+        <section className="section product-section" id="products" aria-labelledby="products-title">
+          <div className="section-heading">
+            <h2 id="products-title">Products</h2>
+            <span>02</span>
+          </div>
+
+          <article className="product-card">
+            <div className="product-overview">
+              <div>
+                <div className="product-meta">
+                  <span>In Development</span>
+                  <span>Working Title</span>
+                </div>
+                <p className="product-kicker">AI that governs AI.</p>
+                <h3>Enterprise AI Control Plane</h3>
+              </div>
+              <button
+                className="product-toggle"
+                type="button"
+                aria-expanded={productOpen}
+                aria-controls="enterprise-control-plane-details"
+                onClick={() => setProductOpen((open) => !open)}
+              >
+                詳しく見る
+                <CaretDown
+                  aria-hidden="true"
+                  className={productOpen ? "is-open" : ""}
+                  size={18}
+                  weight="bold"
+                />
+              </button>
+            </div>
+
+            {productOpen && (
+              <div className="product-details" id="enterprise-control-plane-details">
+                <p className="product-description">
+                  A unified execution layer that controls how enterprise AI agents identify themselves,
+                  access data, receive authority, communicate, and act across company systems.
+                </p>
+
+                <div
+                  className="control-plane-diagram"
+                  role="img"
+                  aria-label="Human operators direct AI work through the Enterprise AI Control Plane. The control plane evaluates identity, authority, policy, data, risk, approval, and audit before AI agents can access enterprise systems."
+                >
+                  <div className="diagram-node diagram-node-human">
+                    <UsersThree aria-hidden="true" size={24} />
+                    <div><strong>Human Direction</strong><span>Employees · Admins · Executives</span></div>
+                  </div>
+
+                  <ArrowDown className="diagram-arrow" aria-hidden="true" size={22} weight="bold" />
+
+                  <div className="control-plane-core">
+                    <div className="control-plane-title">
+                      <ShieldCheck aria-hidden="true" size={30} weight="duotone" />
+                      <div><span>ENTERPRISE</span><strong>AI CONTROL PLANE</strong></div>
+                    </div>
+                    <div className="control-modules">
+                      <span>Identity &amp; Authority</span>
+                      <span>Policy &amp; Risk</span>
+                      <span>Data &amp; Masking</span>
+                      <span>Approval &amp; Kill Switch</span>
+                      <span>Audit · Replay · Rollback</span>
+                      <span>Cost &amp; Compliance</span>
+                    </div>
+                    <div className="decision-row" aria-label="Possible control decisions">
+                      <span>Allow</span><span>Deny</span><span>Approval</span><span>Restricted</span>
+                    </div>
+                  </div>
+
+                  <ArrowDown className="diagram-arrow" aria-hidden="true" size={22} weight="bold" />
+
+                  <div className="diagram-agents">
+                    <div className="diagram-node"><Robot aria-hidden="true" size={23} /><span>Sales Agent</span></div>
+                    <div className="diagram-node"><Robot aria-hidden="true" size={23} /><span>Coding Agent</span></div>
+                    <div className="diagram-node"><Robot aria-hidden="true" size={23} /><span>Finance Agent</span></div>
+                  </div>
+
+                  <ArrowDown className="diagram-arrow" aria-hidden="true" size={22} weight="bold" />
+
+                  <div className="diagram-destinations">
+                    <div className="diagram-node">
+                      <Buildings aria-hidden="true" size={24} />
+                      <div><strong>Enterprise Systems</strong><span>Gmail · Slack · GitHub · CRM · Cloud</span></div>
+                    </div>
+                    <div className="diagram-node">
+                      <Database aria-hidden="true" size={24} />
+                      <div><strong>Critical Data</strong><span>ERP · Database · Banking · Customer Data</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="product-note">The product name is provisional and may change.</p>
+              </div>
+            )}
+          </article>
+        </section>
+
         <section className="section" id="socials" aria-labelledby="socials-title">
           <div className="section-heading">
             <h2 id="socials-title">Socials</h2>
-            <span>02</span>
+            <span>03</span>
           </div>
           <div className="social-grid">
             <a className="social-card" href="https://x.com/_a1gernon" target="_blank" rel="noreferrer">
@@ -144,7 +250,7 @@ export function App() {
         <section className="section stack-section" id="stack" aria-labelledby="stack-title">
           <div className="section-heading">
             <h2 id="stack-title">Skills &amp; Tools</h2>
-            <span>03</span>
+            <span>04</span>
           </div>
           <div className="stack-layout">
             {stackGroups.map((group) => (
@@ -159,7 +265,7 @@ export function App() {
         </section>
 
         <section className="contact-section" id="contact" aria-labelledby="contact-title">
-          <p className="contact-index">04</p>
+          <p className="contact-index">05</p>
           <h2 id="contact-title">Contact</h2>
           <p>For work inquiries, get in touch.</p>
             <a className="contact-service-link" href="#pricing">
@@ -179,7 +285,7 @@ export function App() {
         <section className="section pricing-section" id="pricing" aria-labelledby="pricing-title">
           <div className="section-heading">
             <h2 id="pricing-title">Pricing</h2>
-            <span>05</span>
+            <span>06</span>
           </div>
           <div className="pricing-grid">
             {pricingGroups.map((group) => (
