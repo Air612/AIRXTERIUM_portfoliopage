@@ -100,7 +100,7 @@ export function App() {
 
           <a className="work-card" href="https://fori.io/air0916" target="_blank" rel="noreferrer">
             <div className="work-image-wrap">
-              <img src="/foriio-preview.jpg" alt="A YouTube thumbnail created by AIRXTERIUM" />
+              <img src={`${import.meta.env.BASE_URL}foriio-preview.jpg`} alt="A YouTube thumbnail created by AIRXTERIUM" />
             </div>
             <div className="work-content">
               <h3>Selected Creative Work</h3>
