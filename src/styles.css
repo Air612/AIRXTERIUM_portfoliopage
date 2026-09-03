@@ -79,8 +79,7 @@ nav a:focus-visible {
   outline: none;
 }
 
-.hero,
-.stack-section {
+.hero {
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
   padding-right: max(24px, calc((100vw - 1200px) / 2));
@@ -383,8 +382,15 @@ h1 {
 }
 
 .stack-section {
+  padding-right: 24px;
+  padding-left: 24px;
   padding-top: 96px;
   padding-bottom: 96px;
+  background-color: var(--color-carbon);
+  background-image:
+    linear-gradient(rgba(103, 152, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103, 152, 255, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 .stack-layout {
