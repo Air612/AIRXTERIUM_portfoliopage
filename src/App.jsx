@@ -480,6 +480,16 @@ export function App() {
             note="FROM AN IDEA TO SOMETHING REAL"
           />
           <article className="product-card reveal">
+            <div className="product-release">
+              <div className="release-version" aria-label="Version 0.1">v0.1</div>
+              <div className="release-copy">
+                <span className="release-eyebrow mono">NOW LIVE · FIRST RELEASE</span>
+                <h3>Enterprise AI<br />Control Plane</h3>
+                <a className="release-link" href="https://agentgate-weld.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  Explore v0.1 <ArrowUpRight size={24} aria-hidden="true" />
+                </a>
+              </div>
+            </div>
             <div className="product-main">
               <div className="product-art">
                 <Sculpture variant="product" motion={motion} />
@@ -490,7 +500,7 @@ export function App() {
               <div className="product-overview">
                 <span className="status-badge">
                   <i />
-                  In development
+                  v0.1 released · Development continues
                 </span>
                 <h3>
                   AI that <br />
