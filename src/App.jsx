@@ -170,7 +170,7 @@ function ProductDiagram() {
         </div>
       </div>
       <p className="product-note">
-        Concept architecture · The product name is provisional and may change.
+        Concept architecture · AgentGate
       </p>
     </div>
   );
@@ -481,12 +481,12 @@ export function App() {
           />
           <article className="product-card reveal">
             <div className="product-release">
-              <div className="release-version" aria-label="Version 0.2">v0.2</div>
+              <div className="release-version" aria-label="Version 1.1">v1.1</div>
               <div className="release-copy">
                 <span className="release-eyebrow mono">NOW LIVE · LATEST RELEASE</span>
-                <h3>Enterprise AI<br />Control Plane</h3>
+                <h3>AgentGate</h3>
                 <a className="release-link" href="https://agentgate-weld.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  Explore v0.2 <ArrowUpRight size={24} aria-hidden="true" />
+                  Explore v1.1 <ArrowUpRight size={24} aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -500,14 +500,13 @@ export function App() {
               <div className="product-overview">
                 <span className="status-badge">
                   <i />
-                  v0.2 released · Development continues
+                  v1.1 released · Development continues
                 </span>
                 <h3>
                   AI that <br />
                   governs <span>AI.</span>
                 </h3>
-                <p className="product-name">Enterprise AI Control Plane</p>
-                <p className="product-working mono">WORKING TITLE</p>
+                <p className="product-name">AgentGate</p>
                 <button
                   className="product-toggle"
                   type="button"
